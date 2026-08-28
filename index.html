@@ -2,45 +2,400 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Đăng nhập / Đăng ký</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLUESTRIDE — Giày thể thao & thời trang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-  <div class="tabs">
-    <div class="tab active" id="tab-login" onclick="switchTab('login')">Đăng nhập</div>
-    <div class="tab" id="tab-register" onclick="switchTab('register')">Đăng ký</div>
-  </div>
+<!-- shared sneaker icon -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="icon-sneaker" viewBox="0 0 200 100">
+    <path d="M8 78 C8 62 20 58 34 56 C50 54 58 46 66 36 C74 26 84 18 100 18 C112 18 118 26 122 34 C128 46 140 50 156 52 C176 54 192 60 192 78 C192 84 188 88 180 88 L18 88 C12 88 8 84 8 78 Z"
+      fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M66 36 C74 42 86 46 100 46 C112 46 122 42 130 38" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M46 60 L56 44 M62 62 L74 42 M80 63 L92 40" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M8 78 L192 78" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+</svg>
 
-  <div class="form-box">
-    <!-- Form đăng nhập -->
-    <form class="form active" id="form-login">
-      <input type="text" placeholder="Tên đăng nhập hoặc Email" required>
-      <input type="password" placeholder="Mật khẩu" required>
-      <button type="submit">Đăng nhập</button>
-      <p>Chưa có tài khoản? <a href="#" onclick="switchTab('register')">Đăng ký ngay</a></p>
-    </form>
+<header class="site-header">
+  <nav class="nav wrap">
+    <a href="#home" class="logo" aria-label="BLUESTRIDE — trang chủ">
+      <span class="stripes"><span></span><span></span><span></span></span>
+      BLUESTRIDE
+    </a>
 
-    <!-- Form đăng ký -->
-    <form class="form" id="form-register">
-      <input type="text" placeholder="Họ và tên" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Mật khẩu" required>
-      <input type="password" placeholder="Xác nhận mật khẩu" required>
-      <button type="submit">Đăng ký</button>
-      <p>Đã có tài khoản? <a href="#" onclick="switchTab('login')">Đăng nhập</a></p>
-    </form>
+    <button class="nav-toggle" id="navToggle" aria-label="Mở menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a class="nav-link active" href="#home">Trang chủ</a></li>
+      <li><a class="nav-link" href="#sport">Giày thể thao</a></li>
+      <li><a class="nav-link" href="#fashion">Giày thời trang</a></li>
+      <li><a class="nav-link" href="#contact">Liên hệ hỗ trợ</a></li>
+    </ul>
+
+    <a href="#sport" class="nav-cta">Mua ngay</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HOME / HERO -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">
+          <span class="stripes"><span></span><span></span><span></span></span>
+          Bộ sưu tập mới 2026
+        </span>
+        <h1>Bứt tốc mỗi <em>bước chân</em>, chuẩn phong cách xanh</h1>
+        <p>BLUESTRIDE mang đến giày thể thao và giày thời trang được tuyển chọn kỹ lưỡng — êm chân khi vận động, nổi bật khi xuống phố.</p>
+        <div class="hero-actions">
+          <a href="#sport" class="btn btn-primary">
+            Khám phá giày thể thao
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#fashion" class="btn btn-ghost">Xem giày thời trang</a>
+        </div>
+
+        <div class="hero-stats">
+          <div><strong>120+</strong><span>Mẫu giày đang bán</span></div>
+          <div><strong>4.8/5</strong><span>Đánh giá khách hàng</span></div>
+          <div><strong>24h</strong><span>Hỗ trợ đổi trả</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="glow"></div>
+        <div class="shoe-card">
+          <span class="shoe-tag">Bán chạy</span>
+          <svg viewBox="0 0 200 100" style="color:var(--blue-400)"><use href="#icon-sneaker"/></svg>
+          <div class="shoe-price">
+            <strong>1.290.000₫</strong>
+            <span>AirRun Xanh Dương</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY OVERVIEW (part of Trang chủ) -->
+  <section class="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Danh mục</span>
+          <h2>Chọn đúng đôi giày cho từng hành trình</h2>
+        </div>
+        <p>Từ sân tập đến phố đi bộ, BLUESTRIDE có đủ lựa chọn phù hợp với bạn.</p>
+      </div>
+
+      <div class="category-grid">
+        <div class="category-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v16M4 12h16M20 4v16"/></svg></div>
+          <h3>Giày thể thao</h3>
+          <p>Chạy bộ, bóng rổ, tập gym — êm ái và bền bỉ.</p>
+          <a class="go" href="#sport">Xem bộ sưu tập →</a>
+        </div>
+
+        <div class="category-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+          <h3>Giày thời trang</h3>
+          <p>Phong cách streetwear và thanh lịch cho mọi outfit.</p>
+          <a class="go" href="#fashion">Xem bộ sưu tập →</a>
+        </div>
+
+        <div class="category-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2 4 4 8-8 2 2-10 10z"/></svg></div>
+          <h3>Ưu đãi tuần này</h3>
+          <p>Giảm đến 30% cho các mẫu giày được yêu thích nhất.</p>
+          <a class="go" href="#sport">Xem ưu đãi →</a>
+        </div>
+
+        <div class="category-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <h3>Liên hệ hỗ trợ</h3>
+          <p>Tư vấn chọn size, đổi trả và giao hàng nhanh.</p>
+          <a class="go" href="#contact">Liên hệ ngay →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPORT SHOES -->
+  <section id="sport" class="product-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Giày thể thao</span>
+          <h2>Vận động hết mình, êm chân trọn ngày</h2>
+        </div>
+        <div class="divider-stripes"><span></span><span></span><span></span></div>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-media" style="color:var(--blue-400)">
+            <span class="product-badge">Mới</span>
+            <svg viewBox="0 0 200 100"><use href="#icon-sneaker"/></svg>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Chạy bộ</span>
+            <h3 class="product-name">AirRun Pro Xanh</h3>
+            <p class="product-desc">Đế êm nhẹ, thoáng khí, phù hợp chạy đường dài.</p>
+            <div class="product-foot">
+              <span class="product-price">1.290.000₫</span>
+              <button class="add-btn" aria-label="Thêm AirRun Pro Xanh vào giỏ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media" style="color:var(--blue-400)">
+            <span class="product-badge">Bán chạy</span>
+            <svg viewBox="0 0 200 100"><use href="#icon-sneaker"/></svg>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Bóng rổ</span>
+            <h3 class="product-name">Court Force Navy</h3>
+            <p class="product-desc">Đế bám sân tốt, cổ giày ôm chắc mắt cá.</p>
+            <div class="product-foot">
+              <span class="product-price">1.590.000₫</span>
+              <button class="add-btn" aria-label="Thêm Court Force Navy vào giỏ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media" style="color:var(--blue-400)">
+            <svg viewBox="0 0 200 100"><use href="#icon-sneaker"/></svg>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Tập gym</span>
+            <h3 class="product-name">FlexTrain Sky</h3>
+            <p class="product-desc">Linh hoạt, ổn định cho các bài tập cường độ cao.</p>
+            <div class="product-foot">
+              <span class="product-price">1.150.000₫</span>
+              <button class="add-btn" aria-label="Thêm FlexTrain Sky vào giỏ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media" style="color:var(--blue-400)">
+            <span class="product-badge">-20%</span>
+            <svg viewBox="0 0 200 100"><use href="#icon-sneaker"/></svg>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Chạy bộ</span>
+            <h3 class="product-name">CloudStep Ice</h3>
+            <p class="product-desc">Đệm khí giảm sốc, thiết kế siêu nhẹ.</p>
+            <div class="product-foot">
+              <span class="product-price">990.000₫</span>
+              <button class="add-btn" aria-label="Thêm CloudStep Ice vào giỏ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FASHION SHOES -->
+  <section id="fashion" class="product-section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Giày thời trang</span>
+          <h2>Phong cách riêng cho mọi khoảnh khắc</h2>
+        </div>
+        <div class="divider-stripes"><span></span><span></span><span></span></div>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-media" style="color:var(--blue-400)">
+            <span class="product-badge">Mới</span>
+            <svg viewBox="0 0 200 100"><use href="#icon-sneaker"/></svg>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Streetwear</span>
+            <h3 class="product-name">Urban Wave Blue</h3>
+            <p class="product-desc">Form dáng thấp, phối được với mọi outfit đường phố.</p>
+            <div class="product-foot">
+              <span class="product-price">1.390.000₫</span>
+              <button class="add-btn" aria-label="Thêm Urban Wave Blue vào giỏ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media" style="color:var(--blue-400)">
+            <svg viewBox="0 0 200 100"><use href="#icon-sneaker"/></svg>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Minimalist</span>
+            <h3 class="product-name">Denim Sky Low</h3>
+            <p class="product-desc">Chất liệu denim xanh, thanh lịch và dễ phối đồ.</p>
+            <div class="product-foot">
+              <span class="product-price">1.190.000₫</span>
+              <button class="add-btn" aria-label="Thêm Denim Sky Low vào giỏ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media" style="color:var(--blue-400)">
+            <span class="product-badge">Bán chạy</span>
+            <svg viewBox="0 0 200 100"><use href="#icon-sneaker"/></svg>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Cổ cao</span>
+            <h3 class="product-name">Highline Cobalt</h3>
+            <p class="product-desc">Cổ cao cá tính, điểm nhấn khóa kéo bên hông.</p>
+            <div class="product-foot">
+              <span class="product-price">1.450.000₫</span>
+              <button class="add-btn" aria-label="Thêm Highline Cobalt vào giỏ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media" style="color:var(--blue-400)">
+            <svg viewBox="0 0 200 100"><use href="#icon-sneaker"/></svg>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Basic</span>
+            <h3 class="product-name">Canvas Azure</h3>
+            <p class="product-desc">Vải canvas bền, dễ vệ sinh, mang hằng ngày.</p>
+            <div class="product-foot">
+              <span class="product-price">790.000₫</span>
+              <button class="add-btn" aria-label="Thêm Canvas Azure vào giỏ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / SUPPORT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Liên hệ hỗ trợ</span>
+          <h2>Cần tư vấn? Chúng tôi luôn sẵn sàng</h2>
+        </div>
+        <p>Hỗ trợ chọn size, đổi trả trong 7 ngày và giao hàng toàn quốc.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-row">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <h4>Địa chỉ cửa hàng</h4>
+              <p>62 Ao Đôi, Bình Hưng Hòa, TP. Hồ Chí Minh</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.35 1.79.68 2.63a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.45-1.25a2 2 0 012.11-.45c.84.33 1.73.56 2.63.68A2 2 0 0122 16.92z"/></svg></div>
+            <div>
+              <h4>Hotline / Zalo</h4>
+              <p>0962 630 679 — hỗ trợ 8:00–21:00 hằng ngày</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <div>
+              <h4>Thời gian phản hồi</h4>
+              <p>Trong vòng 24 giờ đối với mọi yêu cầu hỗ trợ</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-row">
+            <div class="field">
+              <label for="cf-name">Họ và tên</label>
+              <input id="cf-name" type="text" placeholder="Nguyễn Văn A" required>
+            </div>
+            <div class="field">
+              <label for="cf-phone">Số điện thoại</label>
+              <input id="cf-phone" type="tel" placeholder="09xx xxx xxx" required>
+            </div>
+          </div>
+          <div class="field full" style="margin-bottom:16px;">
+            <label for="cf-topic">Chủ đề cần hỗ trợ</label>
+            <input id="cf-topic" type="text" placeholder="Ví dụ: tư vấn chọn size giày">
+          </div>
+          <div class="field full" style="margin-bottom:8px;">
+            <label for="cf-msg">Nội dung</label>
+            <textarea id="cf-msg" placeholder="Mô tả yêu cầu của bạn..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Gửi yêu cầu hỗ trợ</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a href="#home" class="logo">
+      <span class="stripes"><span></span><span></span><span></span></span>
+      BLUESTRIDE
+    </a>
+    <ul class="footer-links">
+      <li><a href="#home">Trang chủ</a></li>
+      <li><a href="#sport">Giày thể thao</a></li>
+      <li><a href="#fashion">Giày thời trang</a></li>
+      <li><a href="#contact">Liên hệ hỗ trợ</a></li>
+    </ul>
   </div>
-</div>
+  <p class="footer-note">© 2026 BLUESTRIDE. 62 Ao Đôi, Bình Hưng Hòa, TP.HCM — 0962 630 679</p>
+</footer>
 
 <script>
-  function switchTab(tab) {
-    document.getElementById('tab-login').classList.toggle('active', tab === 'login');
-    document.getElementById('tab-register').classList.toggle('active', tab === 'register');
-    document.getElementById('form-login').classList.toggle('active', tab === 'login');
-    document.getElementById('form-register').classList.toggle('active', tab === 'register');
-  }
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Active link highlight + close mobile menu on click
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', false);
+    });
+  });
 </script>
 
 </body>
